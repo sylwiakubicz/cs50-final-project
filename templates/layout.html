@@ -87,7 +87,7 @@
 
   <main>
     <!-- {% block main %}{% endblock %} -->
-    <p style="size: 2000rem"> 
+    <p style="height: 2000rem;"> 
 
     </p>
   </main>
@@ -128,10 +128,16 @@
       function handleScroll() {
         if($(window).scrollTop() <= 40){
           $('.navbar').removeClass('scroll-navbar');
+          var $nav = $(".fa-nav");
+          var $icons = $(".fa-nav i");
+          $nav.removeClass('scrolled');
+          $icons.removeClass('scrolled');
         } else {
           $('.navbar').addClass('scroll-navbar');
           var $nav = $(".fa-nav");
+          var $icons = $(".fa-nav i");
           $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+          $icons.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         }
       }
 
